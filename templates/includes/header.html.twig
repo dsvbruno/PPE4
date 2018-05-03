@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+{% block body %} 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>Fast Burger</h1> 
+            </div>
+            <div class="col-md-4"></div>
+{#            <div class="col-md-4"><br>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <p>Utilisateur: {{ app.user.username }}  <a href="{{path('logout')}}"> Déconnexion </a></p>
+
+                {% else %}
+                    <p>Vous n'êtes pas authentifié. </p>
+                    <a href="{{path('login')}}"> Connexion </a>
+                {% endif %}
+            </div>#}
+        </div>
+        <div class="container">
+            <div class="row">
+                <p>Bienvenue sur le site officiel du livreur de burger le plus rapide de la région!<p>
+            </div>
+        </div>
+    </div>
+    {% endblock body%}

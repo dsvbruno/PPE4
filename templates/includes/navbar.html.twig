@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="col-md-12">
+        <div class="topnav">
+            <a href="/" class="activenav">Accueil</a>
+            <span>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a href="{{path('compte')}}">Utilisateur: {{ app.user.username }}</a>
+                    <a href="{{path('compte')}}"> Compte </a>
+                    <a href="{{path('logout')}}"> Déconnexion </a>
+
+                {% else %}
+                    <a href="{{path('login')}}"> Connexion </a>
+                {% endif %}
+            </span>
+            <span>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+            </span>
+            
+            {#<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>#}
+
+        </div>
+    </div>
+</div>

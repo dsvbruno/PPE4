@@ -1,0 +1,29 @@
+{# empty Twig template #}
+{% extends "base.html.twig" %}
+{% block body %}
+    {% include "includes/header.html.twig" %}
+    {% include "includes/navbar.html.twig" %}
+
+    <div class="container-fluid" style="margin-top: 50px;" >
+        <div class="row">
+            <div class="col-sm-3 offset-1">
+                <img class="img-fluid img-thumbnail" style="height: 400px; width: 300px;" src="{{produit.getProImage}}" >
+            </div>
+            <div class="col-sm-4">
+                <h1>{{produit.getProNom}}</h1>
+                <br>
+                <h3>{{produit.getProPrix}} € </h3>
+                <h4>{{produit.getProStock}} encore en stock </h4>
+                <br/>
+                <h4>{{produit.getProResume}}</h4>
+                <br>
+                <a class="btn btn-success" href="{{ path('ajoutPanierFromProduit', { 'id': produit.getProId }) }}" >
+                    <i class="fas fa-shopping-basket"></i> Ajouter au panier</a>
+                <a class="btn btn-info"><i class="fas fa-heart"></i> Ajouter aux favoris</a>
+                {#                <a class="btn btn-danger"><i class="fas fa-heart"></i> Ajouter aux favoris</a>#}
+
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

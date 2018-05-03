@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %} 
+{% block body %}
+    {% include "includes/header.html.twig" %}
+    {% include "includes/navbar.html.twig" %}
+    <div class="container">
+        <h1 class="center text-center " style="margin-top: 20px; font-size: 50px;">
+                {% block titrecompte %}
+                    Gestion du compte 
+                {%endblock titrecompte %}
+            </h1>
+    </div>
+{% block compte %}
+    <div class="container-fluid" style="margin-bottom: 20px;" >
+        <div class="container">
+            <div>
+                        <div>
+                            <h3>
+                                <a href="{{ path('changerMdp')}}" class="btn btn-dark">
+                                    Changer de mot de passe
+                                </a>
+                            </h3>
+                        </div>
+                        <div>
+                            <h4>
+                                <a 
+                                    href="{{ path('commandes') }}" 
+                                    class="btn btn-dark">
+                                    Commandes
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8 " style="margin-top: 40px;">
+                <div class="container-fluid font-fam-courrier" >
+                    
+                    
+                    {% endblock compte %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

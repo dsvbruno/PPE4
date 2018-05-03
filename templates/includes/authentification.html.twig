@@ -1,0 +1,7 @@
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <p>Utilisateur: {{ app.user.username }}  <a href="{{path('logout')}}"> Déconnexion </a></p>
+
+{% else %}
+    <p>Vous n'êtes pas authentifié. </p>
+    <a href="{{path('login')}}"> Connexion </a>
+{% endif %}
